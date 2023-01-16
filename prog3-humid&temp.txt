@@ -1,0 +1,23 @@
+#include "DHT.h"
+DHT dht(2,DHT11);   //2 jo hai wo pin hai aur DHT11 jo hai wo pin-type hai
+void setup() {
+  // put your setup code here, to run once:
+  dht.begin();
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  float humidity = dht.readHumidity();
+  float temp = dht.readTemperature();
+  float tempF = dht.readTemperature(true); //true daale to Fahrenheit me deta kate
+  
+  Serial.print("Humidity");
+  Serial.print(humidity);
+
+  Serial.print("Temp");
+  Serial.print(temp);
+
+  Serial.print("Temp in Fajkskasjdas");
+  Serial.print(tempF);
+}

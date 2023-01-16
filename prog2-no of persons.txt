@@ -1,0 +1,24 @@
+#define IR 10
+#define led 13
+int counter = 0;
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(IR,INPUT);
+  pinMode(led,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  int sValue = digitalRead(IR);
+  if(sValue == LOW){
+    digitalWrite(led,HIGH);
+    counter++;
+    delay(1000);
+  }
+  else{
+    digitalWrite(led,LOW);
+    delay(1000);
+  }
+
+}

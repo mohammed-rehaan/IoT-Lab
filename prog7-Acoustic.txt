@@ -1,0 +1,23 @@
+// Acoustic sensor
+
+#define led 13
+#define sPin 8
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(led,OUTPUT);
+  pinMode(sPin,INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  int sValue = digitalRead(sPin);
+
+  if(sValue == 1){
+    digitalWrite(led,HIGH);
+    delay(1000);
+  }
+  else{
+    digitalWrite(led,LOW);
+  }
+}

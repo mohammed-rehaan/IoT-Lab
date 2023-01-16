@@ -1,0 +1,24 @@
+#define rLed 12
+#define gLed 13
+#define sPin 10
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(12,OUTPUT);
+  pinMode(13,OUTPUT);
+  pinMode(10,INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  int gasVal = digitalRead(sPin);
+
+  if(gasVal > 250){
+    digitalWrite(rLed , HIGH);
+    digitalWrite(gLed , LOW);
+  }
+  else{
+    digitalWrite(rLed,LOW);
+    digitalWrite(gLed,HIGH);
+  }
+}
